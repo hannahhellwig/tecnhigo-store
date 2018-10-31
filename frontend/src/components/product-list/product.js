@@ -1,4 +1,5 @@
 import React from "react"
+// import Rating from "./rating"
 
 class Product extends React.Component {
 

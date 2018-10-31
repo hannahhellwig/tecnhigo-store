@@ -37,13 +37,11 @@ app.get("/products", (req, res) => {
   })
 })
 
-// Endpoint to create a product. Send a POST to /products with a JSON body
-// with the keys and values you want to persist in the database.
 app.post("/products", (req, res) => {
   const product = new Product(req.body)
 
   product.save()
-    .then(() => { res.status(201).send("Product created") })
+    .then(() => { res.status(201).redirect('http://localhost:3000/#/add-product') })
     .catch(err => { res.status(400).send(err) })
 })
 

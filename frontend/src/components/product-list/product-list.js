@@ -1,4 +1,5 @@
 import React from "react"
+import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Product from "./product.js"
 
 const productsApi = "http://localhost:8080/products"
@@ -24,6 +25,9 @@ class ProductList extends React.Component {
     return (
       <div>
         <header><h1>Christmas</h1></header>
+        <Link to="/add-product">
+          <button>Add Product</button>
+        </Link>
         <div className="productsListContainer">
           {this.state.products.map(product => <Product
             title={product.title}
