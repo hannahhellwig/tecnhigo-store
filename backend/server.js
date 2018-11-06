@@ -26,6 +26,15 @@ const Product = mongoose.model("Product", {
   rating: Number
 })
 
+// {rating: req.body.rating}
+Product.findOneAndUpdate({_id: "5bd98663cd38517ffe54f662"}, {rating: 3}, {upsert:true}, (err, doc) =>{
+    if (err){
+      console.log("error");
+    }else {
+      console.log("succesfully saved");
+    }
+})
+
 app.get("/", (req, res) => {
   res.send("Team 4 API")
 })

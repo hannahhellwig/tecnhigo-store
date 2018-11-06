@@ -6,5 +6,6 @@ import AddProduct from "./components/add-product/add-product"
 import "./index.scss"
 import "./components/product-list/product-list.scss"
 import "./components/add-product/add-product.scss"
+import Rating from "./components/product-list/rating"
 
 ReactDOM.render(<App />, document.getElementById("root"))
