@@ -1,5 +1,5 @@
 import React from "react"
-// import Rating from "./rating"
+import Rating from "./rating"
 
 class Product extends React.Component {
 
@@ -9,7 +9,7 @@ class Product extends React.Component {
         <img className="productImage" src={this.props.image} alt="" />
         <h2>{this.props.title}</h2>
         <p>Price {this.props.price} kr</p>
-        <p>Rating {this.props.rating}</p>
+        <Rating rating={this.props.rating}/>
         <button>Buy</button>
       </div>
     )
