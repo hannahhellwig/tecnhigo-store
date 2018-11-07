@@ -94,6 +94,9 @@ class AddProduct extends React.Component {
             type="submit"
           />
         </form>
+        <Link to="/product-list">
+          <button>Back to Product List</button>
+        </Link>
       </div>
     )
     }
