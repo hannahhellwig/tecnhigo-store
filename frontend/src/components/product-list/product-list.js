@@ -1,6 +1,7 @@
 import React from "react"
 import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Product from "./product.js"
+import OneProduct from "./one-product.js"
 
 const productsApi = "http://localhost:8080/products"
 
@@ -37,13 +38,7 @@ class ProductList extends React.Component {
         </Link>
         <div className="productsListContainer">
           <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
-          // {this.state.products.map(product => <Product
-          //   title={product.title}
-          //   image={product.image}
-          //   price={product.price}
-          //   rating={product.rating}
-          //   category={product.category} />)}
-        </div>
+         </div>
         <div className="centered-button">
           <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
         </div>
