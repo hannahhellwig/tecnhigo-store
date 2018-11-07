@@ -69,10 +69,10 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-      <div className="hero-image">
-        <img src="./images/waves.png"/>
-        <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
-      </div>
+        <div className="hero-image">
+          <img src="./images/waves.png"/>
+          <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
+        </div>
 
         <Link to="/add-product">
           <button>Add Product</button>
@@ -84,16 +84,15 @@ class ProductList extends React.Component {
             price={product.price}
             rating={product.rating}
             category={product.category}
-            changeRating={this.changeRating}
-           />)}
-        <div>
-          <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
+            changeRating={this.changeRating} />)}
+          <div>
+            <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
+          </div>
+          <div className="centered-button">
+            <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
+          </div>
         </div>
-        <div className="centered-button">
-          <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
-        </div>
-
       </div>
     )
   }
