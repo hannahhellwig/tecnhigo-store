@@ -57,46 +57,46 @@ class AddProduct extends React.Component {
         })
     }
 
-  render() {
-    return (
-      <div className="wrapper">
-        <h1>Add product</h1>
-        <form id="addproduct" className="addproduct" onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Title"
-            name="title"
-            onChange={this.handleTitle}
-            value={this.state.title}
-            required />
-          <input
-            type="number"
-            placeholder="Price"
-            name="price"
-            onChange={this.handlePrice}
-            value={this.state.price}
-            required />
-          <input
-            type="text"
-            placeholder="Category"
-            name="category"
-            onChange={this.handleCategory}
-            value={this.state.category}
-            required />
-          <input
-            type="text"
-            placeholder="Image URL"
-            name="image"
-            onChange={this.handleImage}
-            value={this.state.image}
-            required />
-          <input
-            type="submit"
-          />
-        </form>
-      </div>
-    )
+    render() {
+      return (
+        <div className="wrapper">
+          <h1>Add product</h1>
+          <form id="addproduct" className="addproduct" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Title"
+              name="title"
+              onChange={this.handleTitle}
+              value={this.state.title}
+              required />
+            <input
+              type="number"
+              placeholder="Price"
+              name="price"
+              onChange={this.handlePrice}
+              value={this.state.price}
+              required />
+            <input
+              type="text"
+              placeholder="Category"
+              name="category"
+              onChange={this.handleCategory}
+              value={this.state.category}
+              required />
+            <input
+              type="text"
+              placeholder="Image URL"
+              name="image"
+              onChange={this.handleImage}
+              value={this.state.image}
+              required />
+            <input
+              type="submit"
+            />
+          </form>
+        </div>
+      )
     }
-    }
+}
 
-    export default AddProduct
+export default AddProduct

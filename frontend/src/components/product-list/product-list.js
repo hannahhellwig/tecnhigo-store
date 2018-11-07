@@ -17,9 +17,44 @@ class ProductList extends React.Component {
     fetch(productsApi).then(response => response.json()).then(json => {
       this.setState({
         products: json
+
       })
     })
   }
+
+  // changeRating(newRating, name) {
+  //   this.setState({
+  //     rating: newRating
+  //   })
+  // }
+
+
+  changeRating = event => {
+    event.preventDefault()   //prevents the default behavior of submit
+
+    fetch("http://localhost:8080/products", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    })
+
+
+      .then(response => {
+        if (response.status === 201) {
+          this.setState({
+            rating: ""
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err, "ERROR")
+      })
+  }
+
+
 
   render() {
     return (
@@ -34,7 +69,9 @@ class ProductList extends React.Component {
             image={product.image}
             price={product.price}
             rating={product.rating}
-            category={product.category} />)}
+            category={product.category}
+            changeRating={this.changeRating}
+           />)}
         </div>
       </div>
     )

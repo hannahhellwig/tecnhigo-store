@@ -2,11 +2,11 @@ import React from "react"
 import StarRatings from "react-star-ratings"
 
 class Rating extends React.Component {
-  changeRating(newRating, name) {
-    this.setState({
-      rating: newRating
-    })
-  }
+  // changeRating(newRating, name) {
+  //   this.setState({
+  //     rating: newRating
+  //   })
+  // }
 
   render() {
     return (
@@ -14,7 +14,7 @@ class Rating extends React.Component {
         rating={this.props.rating}
         starRatedColor="#FFD907"
         starHoverColor="#FFD907"
-        changeRating={this.changeRating}
+        changeRating={this.props.changeRating}
         numberOfStars={5}
         name="rating"
         starDimension="40px"
