@@ -9,7 +9,8 @@ class ProductList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: []
+      products: [],
+      productsToLoad: 10
     }
   }
 
@@ -21,6 +22,12 @@ class ProductList extends React.Component {
     })
   }
 
+  handleClickLoadMore = () => {
+    this.setState({
+      productsToLoad: this.state.productsToLoad += 10
+    })
+  }
+
   render() {
     return (
       <div>
@@ -29,13 +36,18 @@ class ProductList extends React.Component {
           <button>Add Product</button>
         </Link>
         <div className="productsListContainer">
-          {this.state.products.map(product => <Product
-            title={product.title}
-            image={product.image}
-            price={product.price}
-            rating={product.rating}
-            category={product.category} />)}
+          <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
+          // {this.state.products.map(product => <Product
+          //   title={product.title}
+          //   image={product.image}
+          //   price={product.price}
+          //   rating={product.rating}
+          //   category={product.category} />)}
         </div>
+        <div className="centered-button">
+          <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
+        </div>
+
       </div>
     )
   }
