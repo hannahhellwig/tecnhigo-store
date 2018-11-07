@@ -1,6 +1,9 @@
 import React from "react"
 import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Product from "./product.js"
+import Button from "../button/button.js"
+import OneProduct from "./one-product.js"
+import './product-list.scss'
 
 const productsApi = "http://localhost:8080/products"
 
@@ -31,18 +34,17 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-        <header><h1>Christmas</h1></header>
+      <div className="hero-image">
+        <img src="./images/waves.png"/>
+        <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
+      </div>
+
         <Link to="/add-product">
           <button>Add Product</button>
         </Link>
-        <div className="productsListContainer">
+        <div>
           <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
-          // {this.state.products.map(product => <Product
-          //   title={product.title}
-          //   image={product.image}
-          //   price={product.price}
-          //   rating={product.rating}
-          //   category={product.category} />)}
+
         </div>
         <div className="centered-button">
           <Button onClick={this.handleClickLoadMore}> Load More Products </Button>

@@ -12,7 +12,7 @@ const OneProduct = props => {
     category={product.category} />)
 
   return (
-    <div className="products-list">
+    <div className="productsListContainer">
       {products}
     </div>
   )

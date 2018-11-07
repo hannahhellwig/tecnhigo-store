@@ -1,5 +1,6 @@
 import React from "react"
 import StarRatings from "react-star-ratings"
+import './product-list.scss'
 
 class Rating extends React.Component {
   changeRating(newRating, name) {
@@ -10,15 +11,17 @@ class Rating extends React.Component {
 
   render() {
     return (
-      <StarRatings
-        rating={this.props.rating}
-        starRatedColor="#FFD907"
-        starHoverColor="#FFD907"
-        changeRating={this.changeRating}
-        numberOfStars={5}
-        name="rating"
-        starDimension="40px"
-        starSpacing="15px" />
+      <div className="rating-container">
+        <StarRatings
+          rating={this.props.rating}
+          starRatedColor="#FFD907"
+          starHoverColor="#FFD907"
+          changeRating={this.changeRating}
+          numberOfStars={5}
+          name="rating"
+          starDimension="20px"
+          starSpacing="5px" />
+      </div>
     )
   }
 }
