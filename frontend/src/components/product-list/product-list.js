@@ -43,6 +43,7 @@ class ProductList extends React.Component {
           const newProductState = this.state.products.map(product => {
             if (product._id === id) {
               product.rating = rating
+              console.log(rating, id)
             }
             return product
           })
@@ -99,8 +100,8 @@ class ProductList extends React.Component {
             rating={product.rating}
             category={product.category}
             changeRating={this.changeRating} />)}
-          </div>
-            <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
+        </div>
+        <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
         <div className="button-container">
           <div className="centered-button">
@@ -110,8 +111,6 @@ class ProductList extends React.Component {
             </Link>
           </div>
         </div>
-
-
         <Footer />
       </div>
     )
