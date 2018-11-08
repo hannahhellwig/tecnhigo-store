@@ -99,7 +99,7 @@ class ProductList extends React.Component {
             rating={product.rating}
             category={product.category}
             changeRating={this.changeRating} />)}
-          <div>
+          </div>
             <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
         <div className="button-container">
