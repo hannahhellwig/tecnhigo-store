@@ -14,8 +14,8 @@ class Rating extends React.Component {
       <div className="rating-container">
         <StarRatings
           rating={this.props.rating}
-          starRatedColor="#FFD907"
-          starHoverColor="#FFD907"
+          starRatedColor="#f7941f"
+          starHoverColor="#f7941f"
           changeRating={this.props.changeRating}
           numberOfStars={5}
           name="rating"

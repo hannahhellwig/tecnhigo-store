@@ -14,7 +14,7 @@ class ProductList extends React.Component {
     super(props)
     this.state = {
       products: [],
-      productsToLoad: 16
+      productsToLoad: 8
     }
   }
 
@@ -63,40 +63,32 @@ class ProductList extends React.Component {
 
   handleClickLoadMore = () => {
     this.setState({
-      productsToLoad: this.state.productsToLoad += 16
+      productsToLoad: this.state.productsToLoad += 8
     })
   }
 
   render() {
     return (
       <div>
-        <div className="hero-image">
-          <img src="./images/waves.png"/>
+        <div className="hero-container">
+          <div className="hero-image"><img src="./images/waves.png"/></div>
+          <div className="logo-image"><img src="./images/logo-circle.png"/></div>
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
 
-        <Link to="/add-product">
-          <button>Add Product</button>
-        </Link>
-        <div className="productsListContainer">
-          {this.state.products.map(product => <Product
-            title={product.title}
-            image={product.image}
-            price={product.price}
-            rating={product.rating}
-            category={product.category}
-            changeRating={this.changeRating} />)}
-          <div>
+
+
             <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
-          </div>
+        <div className="button-container">
           <div className="centered-button">
             <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
+            <Link to="/add-product">
+              <button>Add Product</button>
+            </Link>
           </div>
         </div>
-        <div className="centered-button">
-          <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
-        </div>
+
 
         <Footer />
       </div>

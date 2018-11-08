@@ -9,6 +9,12 @@ button {
   margin: 10px 0px;
   color: #fff;
   font-family: BigJohn;
+  font-size: 14px;
   text-decoration: none;
-  background-color: #f4adc0;
+  background-color: #ffc0cb;
+  // border-radius: 25px;
+}
+
+button:hover {
+  background-color: #bb1306;
 }

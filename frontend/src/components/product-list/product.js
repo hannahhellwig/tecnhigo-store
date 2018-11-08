@@ -7,9 +7,10 @@ class Product extends React.Component {
     return (
       <div className="productContainer">
         <div className="imageContainer">
-          <img className="productImage" src={this.props.image} alt="" /></div>
+          <img className="productImage" src={this.props.image} alt="" />
+        </div>
         <h2>{this.props.title}</h2>
-        <p>Price {this.props.price} kr</p>
+        <p>Price: {this.props.price} kr</p>
         <Rating rating={this.props.rating}
           changeRating={this.props.rating} />
         <button>Buy</button>
