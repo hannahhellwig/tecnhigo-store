@@ -27,31 +27,29 @@ class ProductList extends React.Component {
     })
   }
 
-  // changeRating(newRating, name) {
-  //   this.setState({
-  //     rating: newRating
-  //   })
-  // }
-
-
-  changeRating = event => {
-    event.preventDefault()   //prevents the default behavior of submit
-
+  changeRating = (rating, id) => {
     fetch("http://localhost:8080/products", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({ id, rating })
     })
-
 
       .then(response => {
         if (response.status === 201) {
-          this.setState({
-            rating: ""
+          console.log(this)
+          const newProductState = this.state.products.map(product => {
+            if (product._id === id) {
+              product.rating = rating
+            }
+            return product
           })
+          this.setState({
+            products: newProductState
+          })
+          console.log(newProductState)
         }
       })
       .catch(err => {
@@ -59,11 +57,22 @@ class ProductList extends React.Component {
       })
   }
 
-
-
   handleClickLoadMore = () => {
     this.setState({
       productsToLoad: this.state.productsToLoad += 8
+    })
+  }
+
+  handleArraySort = () => {
+    this.setState({
+      products: this.state.products.sort((a, b) => {
+        if (a.rating > b.rating) {
+          return -1
+        }
+        if (a.rating < b.rating) {
+          return 1
+        }
+      })
     })
   }
 
@@ -75,9 +84,22 @@ class ProductList extends React.Component {
           <div className="logo-image"><img src="./images/logo-circle.png"/></div>
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
+        <button onClick={this.handleArraySort}>Best rating</button>
 
-
-
+        <Link to="/add-product">
+          <button>Add Product</button>
+        </Link>
+        <div className="productsListContainer">
+          {this.state.products.map((product, index) => <Product
+            key={index}
+            id={product._id}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            rating={product.rating}
+            category={product.category}
+            changeRating={this.changeRating} />)}
+          <div>
             <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
         <div className="button-container">

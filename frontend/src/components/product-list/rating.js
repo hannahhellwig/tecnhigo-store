@@ -3,11 +3,10 @@ import StarRatings from "react-star-ratings"
 import './product-list.scss'
 
 class Rating extends React.Component {
-  // changeRating(newRating, name) {
-  //   this.setState({
-  //     rating: newRating
-  //   })
-  // }
+
+  changeStarRating = newRating => {
+    this.props.changeRating(newRating, this.props.id)
+  }
 
   render() {
     return (
