@@ -22,9 +22,44 @@ class ProductList extends React.Component {
     fetch(productsApi).then(response => response.json()).then(json => {
       this.setState({
         products: json
+
       })
     })
   }
+
+  // changeRating(newRating, name) {
+  //   this.setState({
+  //     rating: newRating
+  //   })
+  // }
+
+
+  changeRating = event => {
+    event.preventDefault()   //prevents the default behavior of submit
+
+    fetch("http://localhost:8080/products", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.state)
+    })
+
+
+      .then(response => {
+        if (response.status === 201) {
+          this.setState({
+            rating: ""
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err, "ERROR")
+      })
+  }
+
+
 
   handleClickLoadMore = () => {
     this.setState({
@@ -35,17 +70,29 @@ class ProductList extends React.Component {
   render() {
     return (
       <div>
-      <div className="hero-image">
-        <img src="./images/waves.png"/>
-        <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
-      </div>
+        <div className="hero-image">
+          <img src="./images/waves.png"/>
+          <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
+        </div>
 
         <Link to="/add-product">
           <button>Add Product</button>
         </Link>
-        <div>
-          <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
+        <div className="productsListContainer">
+          {this.state.products.map(product => <Product
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            rating={product.rating}
+            category={product.category}
+            changeRating={this.changeRating} />)}
+          <div>
+            <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
+          </div>
+          <div className="centered-button">
+            <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
+          </div>
         </div>
         <div className="centered-button">
           <Button onClick={this.handleClickLoadMore}> Load More Products </Button>

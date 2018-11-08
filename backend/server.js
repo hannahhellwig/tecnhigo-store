@@ -27,13 +27,27 @@ const Product = mongoose.model("Product", {
 })
 
 // {rating: req.body.rating}
-Product.findOneAndUpdate({_id: "5bd98663cd38517ffe54f662"}, {rating: 3}, {upsert:true}, (err, doc) =>{
-    if (err){
-      console.log("error");
-    }else {
-      console.log("succesfully saved");
-    }
+// Product.findOneAndUpdate({_id:req.body._id}, {rating: req.body.rating}, {upsert:true}, (err, doc) =>{
+//     if (err){
+//       console.log("error");
+//     }else {
+//       console.log("succesfully saved");
+//     }
+// })
+
+app.post("/products", (req, res) => {
+  console.log("update")
+  Product.findOneAndUpdate({_id:req.body._id}, {rating: req.body.rating}, {upsert:true}, (err, doc) =>{
+      if (err){
+        res.status(404).send()
+        console.log("error");
+      }else {
+        res.status(201).send()
+        console.log("succesfully saved");
+      }
+  })
 })
+
 
 app.get("/", (req, res) => {
   res.send("Team 4 API")
@@ -46,12 +60,28 @@ app.get("/products", (req, res) => {
   })
 })
 
+// app.post("/products", (req, res) => {
+//  const product = new Product(req.body)
+//
+//  product.save()
+//    .then(() => { res.status(201).redirect('http://localhost:3000/#/add-product') })
+//    .catch(err => { res.status(400).send(err) })
+// })
+
+
 app.post("/products", (req, res) => {
   const product = new Product(req.body)
+  console.log(req.body)
 
   product.save()
-    .then(() => { res.status(201).redirect('http://localhost:3000/#/add-product') })
-    .catch(err => { res.status(400).send(err) })
+    .then(() => {
+      console.log("save")
+      res.status(201).json({created: true})
+    })
+    .catch(err => {
+      console.log("error")
+      res.status(400).send(err)
+    })
 })
 
 app.listen(8080, () => console.log("Team 4 API listening on port 8080!"))
