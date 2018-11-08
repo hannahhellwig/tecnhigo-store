@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom"
 import Product from "./product.js"
 import Button from "../button/button.js"
 import OneProduct from "./one-product.js"
+import Footer from "../footer/footer.js"
 import './product-list.scss'
 
 const productsApi = "http://localhost:8080/products"
@@ -13,7 +14,7 @@ class ProductList extends React.Component {
     super(props)
     this.state = {
       products: [],
-      productsToLoad: 10
+      productsToLoad: 16
     }
   }
 
@@ -27,7 +28,7 @@ class ProductList extends React.Component {
 
   handleClickLoadMore = () => {
     this.setState({
-      productsToLoad: this.state.productsToLoad += 10
+      productsToLoad: this.state.productsToLoad += 16
     })
   }
 
@@ -50,6 +51,7 @@ class ProductList extends React.Component {
           <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
         </div>
 
+        <Footer />
       </div>
     )
   }
