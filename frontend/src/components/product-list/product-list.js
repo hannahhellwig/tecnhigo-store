@@ -26,31 +26,29 @@ class ProductList extends React.Component {
     })
   }
 
-  // changeRating(newRating, name) {
-  //   this.setState({
-  //     rating: newRating
-  //   })
-  // }
-
-
-  changeRating = event => {
-    event.preventDefault()   //prevents the default behavior of submit
-
+  changeRating = (rating, id) => {
     fetch("http://localhost:8080/products", {
       method: "POST",
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({ id, rating })
     })
-
 
       .then(response => {
         if (response.status === 201) {
-          this.setState({
-            rating: ""
+          console.log(this)
+          const newProductState = this.state.products.map(product => {
+            if (product._id === id) {
+              product.rating = rating
+            }
+            return product
           })
+          this.setState({
+            products: newProductState
+          })
+          console.log(newProductState)
         }
       })
       .catch(err => {
@@ -58,11 +56,22 @@ class ProductList extends React.Component {
       })
   }
 
-
-
   handleClickLoadMore = () => {
     this.setState({
       productsToLoad: this.state.productsToLoad += 10
+    })
+  }
+
+  handleArraySort = () => {
+    this.setState({
+      products: this.state.products.sort((a, b) => {
+        if (a.rating > b.rating) {
+          return -1
+        }
+        if (a.rating < b.rating) {
+          return 1
+        }
+      })
     })
   }
 
@@ -70,15 +79,18 @@ class ProductList extends React.Component {
     return (
       <div>
         <div className="hero-image">
-          <img src="./images/waves.png"/>
+          <img src="./images/waves.png" />
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
+        <button onClick={this.handleArraySort}>Best rating</button>
 
         <Link to="/add-product">
           <button>Add Product</button>
         </Link>
         <div className="productsListContainer">
-          {this.state.products.map(product => <Product
+          {this.state.products.map((product, index) => <Product
+            key={index}
+            id={product._id}
             title={product.title}
             image={product.image}
             price={product.price}

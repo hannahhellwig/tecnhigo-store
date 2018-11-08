@@ -37,10 +37,10 @@ const Product = mongoose.model("Product", {
 
 app.post("/products", (req, res) => {
   console.log("update")
-  Product.findOneAndUpdate({_id:req.body._id}, {rating: req.body.rating}, {upsert:true}, (err, doc) =>{
+  Product.findOneAndUpdate({_id:req.body._id}, {'$set': {rating: req.body.rating}}, {upsert:true}, (err, doc) =>{
       if (err){
-        res.status(404).send()
-        console.log("error");
+        res.status(500).send()
+        console.log("error", err, req.body);
       }else {
         res.status(201).send()
         console.log("succesfully saved");
