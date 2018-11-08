@@ -84,11 +84,11 @@ class ProductList extends React.Component {
           <div className="logo-image"><img src="./images/logo-circle.png"/></div>
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
+        <div className="best-rating-container">
+          <p>Sort after:</p>
         <button onClick={this.handleArraySort}>Best rating</button>
+        </div>
 
-        <Link to="/add-product">
-          <button>Add Product</button>
-        </Link>
         <div className="productsListContainer">
           {this.state.products.map((product, index) => <Product
             key={index}

@@ -18,6 +18,31 @@ h1 {
   color: white;
 }
 
+.best-rating-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 60px;
+  color: #001dd2;
+}
+
+.best-rating-container button {
+  border: 3px solid #001dd2;
+  background-color: white;
+  margin-left: 10px;
+  color: #001dd2;
+}
+
+.best-rating-container button:hover {
+  background-color: #001dd2;
+  color: #fff;
+}
+
+.rating-container p {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .hero-text h1 {
   font-family: BigJohn;
   font-size: 100px;
