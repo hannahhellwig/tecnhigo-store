@@ -26,18 +26,9 @@ const Product = mongoose.model("Product", {
   rating: Number
 })
 
-// {rating: req.body.rating}
-// Product.findOneAndUpdate({_id:req.body._id}, {rating: req.body.rating}, {upsert:true}, (err, doc) =>{
-//     if (err){
-//       console.log("error");
-//     }else {
-//       console.log("succesfully saved");
-//     }
-// })
-
 app.post("/products", (req, res) => {
   console.log("update")
-  Product.findOneAndUpdate({_id:req.body._id}, {'$set': {rating: req.body.rating}}, {upsert:true}, (err, doc) =>{
+  Product.findOneAndUpdate({_id:req.body.id}, {'$set': {rating: req.body.rating}}, {upsert:true}, (err, doc) =>{
       if (err){
         res.status(500).send()
         console.log("error", err, req.body);
@@ -59,15 +50,6 @@ app.get("/products", (req, res) => {
     res.json(products)
   })
 })
-
-// app.post("/products", (req, res) => {
-//  const product = new Product(req.body)
-//
-//  product.save()
-//    .then(() => { res.status(201).redirect('http://localhost:3000/#/add-product') })
-//    .catch(err => { res.status(400).send(err) })
-// })
-
 
 app.post("/products", (req, res) => {
   const product = new Product(req.body)
