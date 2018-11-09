@@ -86,13 +86,15 @@ class ProductList extends React.Component {
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
         <div className="best-rating-container">
-        <div className="best-rating-header">
-          <p>Sort by<img src="./images/icon.png" /></p>
+          <div className="best-rating-header">
         <button className="Handle" onClick={this.handleArraySort}>Best Rating</button>
         </div>
-        <Link to="/add-product">
-          <button className="addButton">Add product</button>
-        </Link>
+        <div className="best-rating-addButton">
+          <Link to="/add-product">
+            <button className="addButton">Add product</button>
+          </Link>
+        </div>
+
         </div>
 
 

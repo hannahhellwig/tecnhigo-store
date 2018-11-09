@@ -35,18 +35,60 @@ h1 {
 
 }
 
-.best-rating-container button {
+.best-rating-container {
   // border: 3px solid #001dd2;
-  font-family: BigJohn;
+  // font-family: BigJohn;
+  font-size: 16px;
+  font-weight: 600;
   color: #393939;
   padding: 0px;
   margin: 0px;
-  background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
   overflow: hidden;
-  font-weight: bold;
+  text-transform: uppercase;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.addButton button {
+  border: 1px solid #001dd2;
+  padding: 16px 24px;
+}
+
+
+.best-rating-addButton button {
+  margin: 0px;
+  background-color: #001dd2;
+  border: 3px solid #001dd2;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: BigJohn;
+  margin: 0px;
+}
+
+.best-rating-addButton button:hover {
+  background-color: #172575;
+  cursor: pointer;
+}
+
+.best-rating-header .Handle {
+  margin: 0px;
+  border: 3px solid #001dd2;
+  background-color: Transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #001dd2;
+  font-family: 'Open Sans', sans-serif;
+
+  // font-family: BigJohn;
+  text-transform: uppercase;
 }
 
 .best-rating-container button p {
@@ -75,19 +117,20 @@ h1 {
   text-transform: uppercase;
 }
 
-.best-rating-header .Handle {
-  margin: 0px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #393939;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-}
+
 
 .best-rating-header .Handle:hover {
-  background-color: Transparent;
-  font-weight: 700;
-  text-decoration: underline;
+  margin: 0px;
+  border: 3px solid #001dd2;
+  background-color: #001dd2;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+
+  // font-family: BigJohn;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 
@@ -224,16 +267,11 @@ h1 {
   }
 }
 
-.addButton {
-  font-family: 'Open Sans', sans-serif;
-  border: 1px solid #001dd2;
-  color: #393939;
-}
 
 .addButton button {
   border: 1px solid #001dd2;
   font-size: 16px;
-  font-weight: 300;round-color: Transparent;
+  font-weight: 300;
 }
 
 .centered-button {
