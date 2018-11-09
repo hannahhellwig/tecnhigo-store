@@ -43,7 +43,6 @@ class ProductList extends React.Component {
           const newProductState = this.state.products.map(product => {
             if (product._id === id) {
               product.rating = rating
-              console.log(rating, id)
             }
             return product
           })
@@ -98,20 +97,14 @@ class ProductList extends React.Component {
         </div>
 
 
+        <Link to="/add-product">
+          <button>Add Product</button>
+        </Link>
         <div className="productsListContainer">
-          {this.state.products.map((product, index) => <Product
-            key={index}
-            id={product._id}
-            title={product.title}
-            image={product.image}
-            price={product.price}
-            rating={product.rating}
-            category={product.category}
-            changeRating={this.changeRating} />)}
+          <OneProduct
+            data={this.state.products.slice(0, this.state.productsToLoad)}
+            changeRating={this.changeRating} />
         </div>
-
-        <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
-
           <div className="centered-button">
             <Button onClick={this.handleClickLoadMore}><p><span>+</span> Load More Products </p> </Button>
             </div>
