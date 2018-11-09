@@ -5,16 +5,16 @@
 
 button {
   display: inline-block;
-  padding: 16px 24px;
+  padding: 12px 20px;
+  // height: 40px;
+  // width: 80px;
   margin: 10px 0px;
   color: #fff;
   font-family: BigJohn;
   font-size: 14px;
   text-decoration: none;
-  background-color: #ffc0cb;
+  // background-color: Transparent;
+  // border: 2px solid #000;
+  background-color: #edb1bf;
   // border-radius: 25px;
-}
-
-button:hover {
-  background-color: #bb1306;
 }

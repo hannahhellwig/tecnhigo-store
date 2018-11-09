@@ -60,7 +60,7 @@ class AddProduct extends React.Component {
     render() {
       return (
         <div className="wrapper">
-          <h1>Add product</h1>
+          <h1>Add product</h1>  
           <form id="addproduct" className="addproduct" onSubmit={this.handleSubmit}>
             <input
               type="text"

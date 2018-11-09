@@ -84,7 +84,18 @@ class ProductList extends React.Component {
           <div className="logo-image"><img src="./images/logo-circle.png"/></div>
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
-        <button onClick={this.handleArraySort}>Best rating</button>
+        <div className="best-rating-container">
+          <div className="best-rating-header">
+        <button className="Handle" onClick={this.handleArraySort}>Best Rating</button>
+        </div>
+        <div className="best-rating-addButton">
+          <Link to="/add-product">
+            <button className="addButton">Add product</button>
+          </Link>
+        </div>
+
+        </div>
+
 
         <Link to="/add-product">
           <button>Add Product</button>
@@ -94,14 +105,11 @@ class ProductList extends React.Component {
             data={this.state.products.slice(0, this.state.productsToLoad)}
             changeRating={this.changeRating} />
         </div>
-        <div className="button-container">
           <div className="centered-button">
-            <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
-            <Link to="/add-product">
-              <button>Add Product</button>
-            </Link>
-          </div>
-        </div>
+            <Button onClick={this.handleClickLoadMore}><p><span>+</span> Load More Products </p> </Button>
+            </div>
+
+
         <Footer />
       </div>
     )
