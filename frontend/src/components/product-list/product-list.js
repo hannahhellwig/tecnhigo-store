@@ -96,10 +96,6 @@ class ProductList extends React.Component {
 
         </div>
 
-
-        <Link to="/add-product">
-          <button>Add Product</button>
-        </Link>
         <div className="productsListContainer">
           <OneProduct
             data={this.state.products.slice(0, this.state.productsToLoad)}
