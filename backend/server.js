@@ -51,9 +51,9 @@ app.get("/products", (req, res) => {
   })
 })
 
-app.post("/products", (req, res) => {
+app.post("/products/add", (req, res) => {
   const product = new Product(req.body)
-  console.log(req.body)
+  console.log("hej")
 
   product.save()
     .then(() => {
