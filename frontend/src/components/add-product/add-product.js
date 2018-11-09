@@ -60,7 +60,7 @@ class AddProduct extends React.Component {
     render() {
       return (
         <div className="wrapper">
-          <h1>Add product</h1>  
+          <h1>ADD PRODUCT</h1>
           <form id="addproduct" className="addproduct" onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -91,12 +91,15 @@ class AddProduct extends React.Component {
               value={this.state.image}
               required />
             <input
-              type="submit" />
+              type="submit" value="SEND" />
           </form>
+          <div className="backto-button">
           <Link to="/product-list">
             <button>Back to Product List</button>
           </Link>
+          </div>
         </div>
+
       )
     }
 }
