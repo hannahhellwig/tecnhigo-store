@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@font-face {
+  font-family: BigJohn;
+  src: url(/fonts/BIGJOHN.otf);
+}
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   // background-color: #ffdfe7;
 }
 
@@ -19,29 +25,86 @@ h1 {
 }
 
 .best-rating-container {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-right: 60px;
-  color: #001dd2;
+  margin-left: 60px;
+
 }
 
 .best-rating-container button {
-  border: 3px solid #001dd2;
-  background-color: white;
-  margin-left: 10px;
-  color: #001dd2;
+  // border: 3px solid #001dd2;
+  font-family: BigJohn;
+  color: #393939;
+  padding: 0px;
+  margin: 0px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  font-weight: bold;
 }
 
-.best-rating-container button:hover {
-  background-color: #001dd2;
-  color: #fff;
-}
-
-.rating-container p {
+.best-rating-container button p {
+  // border: 3px solid #001dd2;
+  // font-family: BigJohn;
+  color: #393939;
   font-size: 18px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
   font-family: 'Open Sans', sans-serif;
+
 }
+
+.best-rating-container img {
+  width: 30px;
+  height: auto;
+}
+
+.best-rating-header p {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #393939;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.best-rating-header .Handle {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #393939;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.best-rating-header .Handle:hover {
+  background-color: Transparent;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+
+.best-rating-header img {
+  margin-top: 0px;
+  width: auto;
+  height: 20px;
+  margin-left: 20px;
+  padding: 0px;
+}
+// .best-rating-container p {
+//   margin: 0px;
+//   font-size: 16px;
+//   font-weight: bold;
+//   color: #393939;
+//   font-family: 'Open Sans', sans-serif;
+// }
 
 .hero-text h1 {
   font-family: BigJohn;
@@ -84,6 +147,36 @@ h1 {
   text-align: center;
 }
 
+.productContainer p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.productContainer h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0px;
+
+}
+
+.productsListContainer:hover {
+  cursor: pointer;
+}
+
+.price-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 .imageContainer {
   height: 230px;
   width: 200px;
@@ -92,8 +185,25 @@ h1 {
   object-fit: contain;
 }
 
+.imageContainer:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+
+.productContainer button {
+  width: 150px;
+}
+
+
+
+.buy-button {
+  width: 100px;
+}
 .productContainer button:hover {
   background-color: #e292a5;
+
 }
 
 .productContainer {
@@ -114,14 +224,43 @@ h1 {
   }
 }
 
+.addButton {
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid #001dd2;
+  color: #393939;
+}
+
+.addButton button {
+  border: 1px solid #001dd2;
+  font-size: 16px;
+  font-weight: 300;round-color: Transparent;
+}
+
 .centered-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 35%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.centered-button button {
+  // width: 300px;
+  padding: 16px 24px;
+  margin: 10px 0px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #000098;
+}
+
+.centered-button button:hover {
+  text-decoration: underline;
 }
 
 .button-container {

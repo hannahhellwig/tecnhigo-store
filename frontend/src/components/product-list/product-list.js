@@ -86,9 +86,15 @@ class ProductList extends React.Component {
           <div className="hero-text"><h1>Technigo Bootcamp Shop</h1></div>
         </div>
         <div className="best-rating-container">
-          <p>Sort after:</p>
-        <button onClick={this.handleArraySort}>Best rating</button>
+        <div className="best-rating-header">
+          <p>Sort by<img src="./images/icon.png" /></p>
+        <button className="Handle" onClick={this.handleArraySort}>Best Rating</button>
         </div>
+        <Link to="/add-product">
+          <button className="addButton">Add product</button>
+        </Link>
+        </div>
+
 
         <div className="productsListContainer">
           {this.state.products.map((product, index) => <Product
@@ -101,16 +107,14 @@ class ProductList extends React.Component {
             category={product.category}
             changeRating={this.changeRating} />)}
         </div>
+
         <OneProduct data={this.state.products.slice(0, this.state.productsToLoad)} />
 
-        <div className="button-container">
           <div className="centered-button">
-            <Button onClick={this.handleClickLoadMore}> Load More Products </Button>
-            <Link to="/add-product">
-              <button>Add Product</button>
-            </Link>
-          </div>
-        </div>
+            <Button onClick={this.handleClickLoadMore}><p><span>+</span> Load More Products </p> </Button>
+            </div>
+
+
         <Footer />
       </div>
     )

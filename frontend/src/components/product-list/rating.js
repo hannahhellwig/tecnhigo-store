@@ -18,8 +18,8 @@ class Rating extends React.Component {
           changeRating={this.changeStarRating}
           numberOfStars={5}
           name="rating"
-          starDimension="20px"
-          starSpacing="5px" />
+          starDimension="16px"
+          starSpacing="4px" />
       </div>
     )
   }
