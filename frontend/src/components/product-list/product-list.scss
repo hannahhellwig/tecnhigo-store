@@ -19,9 +19,23 @@ h1 {
   // text-align: center;
   position: absolute;
   top: 65%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 400px;
+}
+
+.hero-text h1 {
+  font-family: BigJohn;
+  font-size: 50px;
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .best-rating-container {
@@ -149,12 +163,7 @@ h1 {
 //   font-family: 'Open Sans', sans-serif;
 // }
 
-.hero-text h1 {
-  font-family: BigJohn;
-  font-size: 100px;
-  position: relative;
-  text-align: left;
-}
+
 
 .logo-image {
   // text-align: center;
@@ -166,8 +175,8 @@ h1 {
 }
 
 .logo-image img {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background-color: white;
 }
@@ -179,10 +188,17 @@ h1 {
   position: relative;
 }
 
-.hero-image img {
-  width: 100%;
-  height: 640px;
-}
+// .hero-image img {
+//   width: 100%;
+//   height: 640px;
+// }
+
+// .hero-text h1 {
+//   font-family: BigJohn;
+//   font-size: 100px;
+//   position: relative;
+//   text-align: left;
+// }
 
 .productsListContainer {
   display: flex;
@@ -240,10 +256,10 @@ h1 {
 }
 
 
-
 .buy-button {
   width: 100px;
 }
+
 .productContainer button:hover {
   background-color: #e292a5;
 
@@ -316,10 +332,63 @@ h1 {
   .productContainer {
     width: 33.33%;
   }
+  .hero-text {
+    // text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 400px;
+  }
+  .hero-text h1 {
+    font-size: 70px;
+    text-align: left;
+  }
+  .logo-image {
+    position: absolute;
+    top: 6%;
+    left: 10%;
+    // transform: translate(-50%, -50%);
+  }
+  .logo-image img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
 }
 
 @media screen and (min-width: 900px) {
   .productContainer {
     width: 25%;
+  }
+  .hero-text {
+    // text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 640px;
+  }
+  .hero-text h1 {
+    font-family: BigJohn;
+    font-size: 120px;
+    position: relative;
+    text-align: left;
+  }
+  .logo-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
   }
 }
